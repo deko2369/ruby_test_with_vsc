@@ -1,0 +1,65 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Local File",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/src/calc.rb"
+        },
+        {
+            "name": "Listen for rdebug-ide",
+            "type": "Ruby",
+            "request": "attach",
+            "cwd": "${workspaceRoot}",
+            "remoteHost": "127.0.0.1",
+            "remotePort": "1234",
+            "remoteWorkspaceRoot": "${workspaceRoot}"
+        },
+        {
+            "name": "Bundle install",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "C:/tools/ruby23/bin/bundle",
+            "args": [
+                "install",
+                "--path=vendor/bundle",
+                "--binstubs"
+            ]
+        },
+        {
+            "name": "RSpec - all",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/bin/rspec",
+            "args": [
+                "-I",
+                "${workspaceRoot}/src",
+                "--format=RspecJunitFormatter",
+                "--out=rspec.xml"
+            ]
+        },
+        {
+            "name": "RSpec - active spec file only",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/bin/rspec",
+            "args": [
+                "-I",
+                "${workspaceRoot}/src",
+                "${file}"
+            ]
+        },
+        {
+            "name": "Cucumber",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/bin/cucumber"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+// 既定の設定とユーザー設定を上書きするには、このファイル内に設定を挿入します
+{
+    "ruby.lint": {
+        "reek": false,
+        "rubocop": true,
+        "ruby": true, //Runs ruby -wc
+        "fasterer": false,
+        "debride": false,
+        "ruby-lint": true
+    }
+}
